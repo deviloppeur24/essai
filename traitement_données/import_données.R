@@ -63,10 +63,11 @@ cargos.geo <- read_excel("Tabela 1.22 (Cargos_Geo).xls")
 # tabela 1.23
 formalcar <- read_excel("Tabela 1.23 (FormalCaract_Geo).xls")
 
-
+# sous utilisation dans tous le pays
+sub.util <- read_excel("Tabela 1.39 (CompSubutil_BR).xls")
 
 # tabela 1.40 ; sous utilisation de la main d'oeuvre (col2 = total)
-sub_util <- read_excel("Tabela 1.40 (Subutil_Geo).xls")
+sub.util.reg <- read_excel("Tabela 1.40 (Subutil_Geo).xls")
 
 
 
