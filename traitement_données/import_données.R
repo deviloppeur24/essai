@@ -7,7 +7,7 @@ library(sf)
 
 
 # directory avec toutes les tables xlsx des données du IBGE
-setwd("C:/Users/louan/Desktop/projet_brésil/csv_et_shp")
+setwd("C:/Users/louan/Desktop/projet_bresil/csv_et_shp")
 
 # indicateurs sociaux au brésil
 # https://www.ibge.gov.br/estatisticas/sociais/trabalho/9221-sintese-de-indicadores-sociais.html
