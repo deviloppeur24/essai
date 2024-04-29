@@ -31,30 +31,32 @@ brazil_carte <- st_as_sf(brazil_carte)
 brazil_carte$PIB <- trunc(brazil_carte$PIB)
 
 ###
-ggplot(data = brazil_carte) +
-  geom_sf(aes(fill = PIB, geometry = geometry), color = NA) +
+k <- ggplot(data = brazil_carte) +
+  geom_sf(aes(fill = log_PIB, geometry = geometry), color = NA) +
   scale_fill_continuous(
-    trans = 'log', 
     low = "palegreen", high = "darkgreen",
-    na.value = "transparent",  
-    name = "Log(PIB)"  
+    na.value = "transparent",
+    name = "PIB",
+    breaks = log10(c(8000, 10000, 15000, 25000, 50000, 100000, 200000, 500000, 900000)),
+    labels = c("8000", "10000", "15000", "25000", "50000", "100000", "200000", "500000", "900000")
   ) +
   theme_void() +
   labs(
     title = "Produit intérieur brut de chaque municipalité du Brésil",
     subtitle = "Real brésilien $, (2021)",
     caption = "IGBE"
-  )+
+  ) +
   theme(
     plot.background = element_rect(fill = "transparent", colour = NA),
-    panel.background = element_rect(fill = "transparent", colour = NA)
-  ) 
+    panel.background = element_rect(fill = "transparent", colour = NA),
+    legend.position = "right"
+  )
 
 
+k
 
 
-
-ggsave("brazil.gdp.png", plot = brazil, bg = "transparent",
+ggsave("brazil.gdp.png", plot = k, bg = "transparent",
        height = 7, width = 16)
 
 

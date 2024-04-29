@@ -28,9 +28,10 @@ p <- ggplot(pop_age) +
   ) +
   guides(fill = guide_legend(title = NULL))+
   theme(
-  plot.title = element_text(hjust = 0.5, size = 20), 
-plot.subtitle = element_text(hjust = 0.5, size = 16),
-legend.text = element_text(size = 15)
+  plot.title = element_text(hjust = 3.5, size = 15), 
+plot.subtitle = element_text(hjust = 2, size = 15),
+legend.text = element_text(size = 28),
+legend.position = "bottom"
 )
 
 p

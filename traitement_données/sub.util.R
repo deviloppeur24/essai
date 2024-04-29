@@ -91,12 +91,12 @@ tx.sousutil <- tx.sousutil %>%
 tx.sousutil <- tx.sousutil %>%
   filter(caract != 'Brésil')
 
-ggplot(tx.sousutil, aes(x=reorder(caract, ecart), y=ecart))+
-  geom_bar(stat='identity', fill='grey')+ 
+m <- ggplot(tx.sousutil, aes(x=reorder(caract, ecart), y=ecart))+
+  geom_bar(stat='identity', fill='darkblue')+ 
   coord_flip()+ 
   labs(
     title = 'Sous-utilisation de la force de travail selon certains indicateurs',
-    subtitle = 'Écart par rapport à la moyenne nationale (20.9%), Brésil, 2020',
+    subtitle = 'Écart par rapport à la moyenne nationale (20.9%), Brésil, 2022',
     x = 'Indicateur',
     y = 'Écart en pourcentage',
     caption = 'Source : Institut de la Géographie et de la Statistique du Brésil'
@@ -104,9 +104,15 @@ ggplot(tx.sousutil, aes(x=reorder(caract, ecart), y=ecart))+
   theme_minimal()+
   theme(legend.position = 'none',
         plot.subtitle = element_text(face = "italic", hjust = 0.5),
-        plot.title = element_text(hjust = 0.5)
+        plot.title = element_text(hjust = 0.5),
+        plot.background = element_rect(fill = "transparent", colour = NA),
+        panel.background = element_rect(fill = "transparent", colour = NA)
   )
 
+m
+
+ggsave("divergingbar.png", plot = m, bg = "transparent",
+       height = 7, width = 16)
 
 ###################################
 # observer les variations dans les groupes d'âge
