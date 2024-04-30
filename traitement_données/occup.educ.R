@@ -39,7 +39,7 @@ instr_geo <- instr_geo %>%
 p <- ggplot(data = instr_geo, aes(x = région, y = Valeur, fill = Éducation))+
   geom_bar(stat = "identity", position = "stack")+
   labs(
-    title = "Répartition du niveau d'instruction chez les personnes non-occupées",
+    title = "Répartition du niveau d'instruction chez les personnes au chômage",
     subtitle = "Selon la région (2022)",
     y = "Pourcentage"
   )+
